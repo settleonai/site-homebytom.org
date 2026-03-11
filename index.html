@@ -1,256 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home by Tom Renovations — Kitchen & Bathroom Remodeling in the Bay Area</title>
-    <meta name="description" content="Professional kitchen and bathroom remodeling in the Bay Area. 35% off kitchens, 25% off bathrooms, free 3D design. Licensed & insured. 21+ years experience.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; }
-        
-        .hero {
-            background: linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,58,95,0.88)),
-                        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80') center/cover;
-            color: white;
-            padding: 80px 20px 100px;
-            text-align: center;
-        }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 16px; font-weight: 800; letter-spacing: -0.5px; }
-        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
-        .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 24px; }
-        
-        .cta-btn {
-            display: inline-block;
-            background: #f59e0b;
-            color: #1a1a1a;
-            padding: 16px 40px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.4); }
-        
-        .phone-link { display: block; margin-top: 16px; color: white; font-size: 1.1rem; text-decoration: none; opacity: 0.9; }
-        .phone-link:hover { opacity: 1; }
-        
-        .offers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            max-width: 960px;
-            margin: -50px auto 60px;
-            padding: 0 20px;
-        }
-        .offer-card {
-            background: white;
-            border-radius: 12px;
-            padding: 32px 24px;
-            text-align: center;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-        }
-        .offer-card .discount { font-size: 2.4rem; font-weight: 800; color: #f59e0b; }
-        .offer-card h3 { margin: 8px 0; font-size: 1.2rem; }
-        .offer-card p { color: #666; font-size: 0.95rem; }
-        
-        .section { padding: 60px 20px; max-width: 960px; margin: 0 auto; }
-        .section h2 { font-size: 2rem; margin-bottom: 16px; text-align: center; font-weight: 700; }
-        .section .subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 1.05rem; }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-        .service-item {
-            background: #f8fafc;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .service-item img { width: 100%; height: 200px; object-fit: cover; }
-        .service-item .content { padding: 20px; }
-        .service-item h3 { font-size: 1.15rem; margin-bottom: 8px; }
-        .service-item p { color: #666; font-size: 0.9rem; }
-        
-        .process {
-            background: #f8fafc;
-            padding: 60px 20px;
-        }
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .step { text-align: center; padding: 20px; }
-        .step-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px; height: 48px;
-            background: #1e3a5f;
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-        .step h3 { margin-bottom: 8px; font-size: 1.05rem; }
-        .step p { color: #666; font-size: 0.9rem; }
-        
-        .trust {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .trust-items { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
-        .trust-item { text-align: center; }
-        .trust-item .num { font-size: 2rem; font-weight: 800; color: #1e3a5f; }
-        .trust-item .label { color: #666; font-size: 0.9rem; }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #1e3a5f, #0f172a);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .cta-section h2 { font-size: 2rem; margin-bottom: 12px; }
-        .cta-section p { opacity: 0.9; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        
-        footer {
-            background: #0f172a;
-            color: rgba(255,255,255,0.6);
-            text-align: center;
-            padding: 24px 20px;
-            font-size: 0.85rem;
-        }
-        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
-        
-        @media (max-width: 640px) {
-            .hero h1 { font-size: 2rem; }
-            .offers { grid-template-columns: 1fr; margin-top: -30px; }
-            .trust-items { gap: 24px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home by Tom — Full-Service Home Renovation, Bay Area</title>
+<meta name="description" content="From vision to reality — full-service home renovation including design, permits, and construction. 21+ years serving the Bay Area. Free consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--navy:#1B2A41;--amber:#D97706;--amber-hover:#b45309;--white:#FFFFFF;
+--light:#F8FAFC;--charcoal:#374151;--charcoal-light:#6B7280;
+--font-heading:'DM Serif Display',Georgia,serif;
+--font-body:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{background:var(--white);padding:16px 0;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--font-heading);font-size:26px;color:var(--navy)}
+.logo span{color:var(--amber)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-phone{font-weight:600;color:var(--navy);font-size:15px}
+.nav-cta{background:var(--amber);color:var(--white);padding:10px 22px;border-radius:6px;font-weight:600;font-size:14px;transition:background .2s}
+.nav-cta:hover{background:var(--amber-hover)}
+.nav-tagline{color:var(--charcoal-light);font-size:12px;letter-spacing:2px;text-transform:uppercase}
+
+/* Split Hero */
+.hero-split{display:grid;grid-template-columns:1fr 1fr;min-height:580px}
+.hero-text{background:var(--navy);display:flex;align-items:center;padding:60px 56px}
+.hero-text-inner{max-width:480px}
+.hero-label{color:var(--amber);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:20px}
+.hero-text h1{font-family:var(--font-heading);color:var(--white);font-size:44px;line-height:1.15;margin-bottom:18px}
+.hero-text p{color:rgba(255,255,255,.75);font-size:16px;line-height:1.7;margin-bottom:28px}
+.hero-image{background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&q=80') center/cover no-repeat}
+.btn-primary{background:var(--amber);color:var(--white);padding:16px 36px;border-radius:6px;font-weight:600;font-size:16px;transition:background .2s;display:inline-block}
+.btn-primary:hover{background:var(--amber-hover)}
+.btn-outline{border:2px solid rgba(255,255,255,.3);color:var(--white);padding:14px 32px;border-radius:6px;font-weight:600;font-size:16px;transition:all .2s;display:inline-block;margin-left:12px}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.06)}
+
+/* Section Utilities */
+.section-label{color:var(--amber);font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.section-title{font-family:var(--font-heading);font-size:38px;color:var(--navy);margin-bottom:16px}
+.section-subtitle{color:var(--charcoal-light);font-size:16px;max-width:620px;line-height:1.7;margin-bottom:48px}
+.text-center{text-align:center}
+.mx-auto{margin-left:auto;margin-right:auto}
+
+/* Full Service Pillars */
+.pillars{padding:80px 0;background:var(--white)}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.pillar{text-align:center;padding:40px 28px;border-radius:12px;background:var(--light);border:1px solid #e5e7eb}
+.pillar-icon{width:64px;height:64px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.pillar-icon svg{width:30px;height:30px;stroke:var(--amber);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pillar h3{font-family:var(--font-heading);font-size:22px;color:var(--navy);margin-bottom:10px}
+.pillar p{color:var(--charcoal-light);font-size:15px;line-height:1.6}
+
+/* Offers */
+.offers{padding:80px 0;background:var(--navy);color:var(--white)}
+.offers .section-title{color:var(--white)}
+.offers .section-subtitle{color:rgba(255,255,255,.6)}
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.offer-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:36px 28px;text-align:center;transition:background .2s}
+.offer-card:hover{background:rgba(255,255,255,.1)}
+.offer-amount{font-family:var(--font-heading);font-size:52px;color:var(--amber);line-height:1;margin-bottom:6px}
+.offer-label{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.5);margin-bottom:16px}
+.offer-card h3{font-size:20px;font-weight:600;margin-bottom:8px}
+.offer-card p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.5}
+
+/* Process */
+.process{padding:80px 0;background:var(--light)}
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.process-card{background:var(--white);border-radius:10px;padding:28px 20px;text-align:center;border:1px solid #e5e7eb;position:relative}
+.process-card::after{content:'';position:absolute;top:32px;right:-10px;width:20px;height:2px;background:#d1d5db}
+.process-card:last-child::after{display:none}
+.process-num{font-family:var(--font-heading);font-size:28px;color:var(--amber);margin-bottom:8px}
+.process-card h4{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.process-card p{font-size:13px;color:var(--charcoal-light);line-height:1.5}
+
+/* Services Grid */
+.services{padding:80px 0;background:var(--white)}
+.services-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:800px;margin:0 auto}
+.service-item{display:flex;align-items:center;gap:14px;padding:18px 24px;border-radius:8px;border:1px solid #e5e7eb;transition:border-color .2s}
+.service-item:hover{border-color:var(--amber)}
+.service-dot{width:10px;height:10px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.service-item span{font-weight:500;font-size:16px;color:var(--navy)}
+
+/* Reviews */
+.reviews{padding:80px 0;background:var(--light)}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:920px;margin:0 auto}
+.review-card{background:var(--white);border-radius:12px;padding:36px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.review-stars{color:var(--amber);font-size:18px;margin-bottom:14px;letter-spacing:2px}
+.review-card blockquote{font-size:16px;line-height:1.7;color:var(--charcoal);margin-bottom:18px;font-style:italic}
+.review-author{font-weight:600;color:var(--navy);font-size:15px}
+.review-detail{color:var(--charcoal-light);font-size:13px;margin-top:2px}
+
+/* Trust Numbers */
+.trust{padding:60px 0;background:var(--navy);color:var(--white)}
+.trust-row{display:flex;justify-content:center;gap:72px;flex-wrap:wrap}
+.trust-item{text-align:center}
+.trust-number{font-family:var(--font-heading);font-size:40px;color:var(--amber)}
+.trust-label{font-size:14px;opacity:.7;margin-top:2px}
+
+/* CTA */
+.cta-section{padding:80px 0;background:var(--white);text-align:center}
+.cta-section h2{font-family:var(--font-heading);font-size:40px;color:var(--navy);margin-bottom:14px}
+.cta-section p{font-size:17px;color:var(--charcoal-light);max-width:560px;margin:0 auto 28px;line-height:1.7}
+.cta-phone{font-family:var(--font-heading);font-size:34px;color:var(--amber);display:block;margin-bottom:24px}
+
+/* Footer */
+footer{background:var(--navy);color:rgba(255,255,255,.5);padding:36px 0;font-size:13px}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer .logo{font-size:20px;color:var(--white)}
+
+/* Responsive */
+@media(max-width:1024px){
+.hero-split{grid-template-columns:1fr;min-height:auto}
+.hero-image{min-height:340px}
+.hero-text{padding:48px 32px}
+.pillars-grid{grid-template-columns:1fr}
+.process-grid{grid-template-columns:repeat(3,1fr)}
+.process-card::after{display:none}
+}
+@media(max-width:768px){
+.hero-text h1{font-size:34px}
+.hero-text{padding:40px 24px}
+.offers-grid{grid-template-columns:1fr}
+.process-grid{grid-template-columns:1fr;max-width:320px;margin:0 auto}
+.services-list{grid-template-columns:1fr}
+.reviews-grid{grid-template-columns:1fr}
+.section-title{font-size:30px}
+.trust-row{gap:36px}
+nav .container{flex-direction:column;gap:8px;text-align:center}
+.nav-right{flex-direction:column;gap:8px}
+.btn-outline{margin-left:0;margin-top:8px}
+footer .container{flex-direction:column;text-align:center}
+}
+</style>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-badge">Serving the Bay Area — Licensed & Insured</div>
-        <h1>Your Dream Home Starts Here</h1>
-        <p>From concept to completion, we bring your vision to life. 200+ five-star reviews across the Bay Area.</p>
-        <a href="tel:4159079070" class="cta-btn">Get Your Free Estimate</a>
-        <a href="tel:4159079070" class="phone-link">Or call us: (415) 907-9070</a>
-    </section>
 
-    <div class="offers">
-        <div class="offer-card">
-            <div class="discount">35% Off</div>
-            <h3>Kitchen Remodels</h3>
-            <p>Transform your kitchen with a complete remodel at an unbeatable price.</p>
-        </div>
-        <div class="offer-card">
-            <div class="discount">25% Off</div>
-            <h3>Bathroom Remodels</h3>
-            <p>Upgrade your bathroom with quality renovations tailored to your style.</p>
-        </div>
-        <div class="offer-card">
-            <div class="discount">Free</div>
-            <h3>3D Design & Rendering</h3>
-            <p>See your dream space before we build it with complimentary 3D designs.</p>
-        </div>
-    </div>
+<!-- Navigation -->
+<nav>
+<div class="container">
+<div>
+<a href="#" class="logo">Home by <span>Tom</span></a>
+<div class="nav-tagline">Consulting &bull; Designing &bull; Building</div>
+</div>
+<div class="nav-right">
+<a href="tel:4159079070" class="nav-phone">(415) 907-9070</a>
+<a href="tel:4159079070" class="nav-cta">Free Consultation</a>
+</div>
+</div>
+</nav>
 
-    <section class="section">
-        <h2>Our Services</h2>
-        <p class="subtitle">From kitchens and bathrooms to full home renovations, we handle it all.</p>
-        <div class="services-grid">
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen Remodeling">
-                <div class="content">
-                    <h3>Kitchen Remodeling</h3>
-                    <p>Custom cabinetry, countertops, fixtures, and layouts designed around how you live.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Bathroom Remodeling">
-                <div class="content">
-                    <h3>Bathroom Remodeling</h3>
-                    <p>Modern bathrooms with premium materials, expert tile work, and smart design.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Full Home Renovation">
-                <div class="content">
-                    <h3>Full Home Renovation</h3>
-                    <p>Complete home transformations that increase your property value and quality of life.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Split Hero -->
+<section class="hero-split">
+<div class="hero-text">
+<div class="hero-text-inner">
+<div class="hero-label">Full-Service Renovation</div>
+<h1>From Vision to Reality — Full-Service Home Renovation</h1>
+<p>Design, permits, materials, and construction — all under one roof. Home by Tom handles every detail of your Bay Area renovation so you don't have to juggle multiple contractors.</p>
+<div>
+<a href="tel:4159079070" class="btn-primary">Call (415) 907-9070</a>
+<a href="#process" class="btn-outline">See Our Process</a>
+</div>
+</div>
+</div>
+<div class="hero-image" role="img" aria-label="Beautiful home renovation exterior"></div>
+</section>
 
-    <section class="process">
-        <div style="max-width:960px;margin:0 auto;">
-            <h2 style="text-align:center;margin-bottom:40px;">How It Works</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h3>Free Consultation</h3>
-                    <p>We visit your home, discuss your vision, and assess the project scope.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h3>3D Design</h3>
-                    <p>See your new space in 3D before construction begins. Completely free.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h3>Build & Install</h3>
-                    <p>Our expert team brings the design to life with quality craftsmanship.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h3>Final Walkthrough</h3>
-                    <p>We walk through every detail together to ensure your complete satisfaction.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Full-Service Pillars -->
+<section class="pillars">
+<div class="container">
+<div class="section-label text-center">The Full-Service Advantage</div>
+<h2 class="section-title text-center">One Team. Every Phase. Zero Headaches.</h2>
+<p class="section-subtitle text-center mx-auto">Most homeowners dread juggling designers, architects, permit offices, and contractors. We eliminate all of that by handling every step in-house.</p>
+<div class="pillars-grid">
+<div class="pillar">
+<div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+<h3>Design & Architecture</h3>
+<p>Our in-house designers create 3D renderings and detailed plans tailored to your lifestyle, taste, and budget. No outside architects needed.</p>
+</div>
+<div class="pillar">
+<div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+<h3>Permits & Engineering</h3>
+<p>We handle all municipal permits, structural engineering, and code compliance so your project moves forward without delays or surprises.</p>
+</div>
+<div class="pillar">
+<div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+<h3>Construction & Finish</h3>
+<p>Our licensed crews execute every build with precision — framing, plumbing, electrical, tile, paint, and final details. All in-house, all guaranteed.</p>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="trust">
-        <h2>Why Homeowners Trust Us</h2>
-        <div class="trust-items">
-            <div class="trust-item">
-                <div class="num">21+</div>
-                <div class="label">Years Experience</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">200+</div>
-                <div class="label">5-Star Reviews</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">500+</div>
-                <div class="label">Projects Completed</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">100%</div>
-                <div class="label">Licensed & Insured</div>
-            </div>
-        </div>
-    </section>
+<!-- Offers -->
+<section class="offers">
+<div class="container">
+<div class="section-label text-center">Current Promotions</div>
+<h2 class="section-title text-center">Special Pricing on Full-Service Renovations</h2>
+<p class="section-subtitle text-center mx-auto">Get started with significant savings on the Bay Area's most comprehensive renovation experience.</p>
+<div class="offers-grid">
+<div class="offer-card">
+<div class="offer-amount">35%</div>
+<div class="offer-label">Off Kitchen Remodels</div>
+<h3>Kitchen Renovation</h3>
+<p>Complete design-to-build kitchen remodels with premium materials and custom finishes.</p>
+</div>
+<div class="offer-card">
+<div class="offer-amount">25%</div>
+<div class="offer-label">Off Bathroom Remodels</div>
+<h3>Bathroom Renovation</h3>
+<p>Full-service bathroom transformations, from spa showers to heated floors.</p>
+</div>
+<div class="offer-card">
+<div class="offer-amount">FREE</div>
+<div class="offer-label">With Every Project</div>
+<h3>3D Design Included</h3>
+<p>Photorealistic 3D renderings so you can walk through your new space before we break ground.</p>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="cta-section">
-        <h2>Ready to Transform Your Home?</h2>
-        <p>Get a free estimate and see what's possible with our complimentary 3D design service.</p>
-        <a href="tel:4159079070" class="cta-btn">Call (415) 907-9070</a>
-    </section>
+<!-- Process -->
+<section class="process" id="process">
+<div class="container">
+<div class="section-label text-center">Our Process</div>
+<h2 class="section-title text-center">How a Full-Service Renovation Works</h2>
+<p class="section-subtitle text-center mx-auto">Five clear steps from your first call to your final walkthrough. No guesswork, no gaps.</p>
+<div class="process-grid">
+<div class="process-card">
+<div class="process-num">01</div>
+<h4>Free Consultation</h4>
+<p>We visit your home, discuss your goals, and evaluate the full project scope.</p>
+</div>
+<div class="process-card">
+<div class="process-num">02</div>
+<h4>Proposal in 12hrs</h4>
+<p>Receive a comprehensive, itemized proposal within 12 hours. No hidden costs.</p>
+</div>
+<div class="process-card">
+<div class="process-num">03</div>
+<h4>3D Design</h4>
+<p>Our designers create detailed 3D renderings of your finished space for approval.</p>
+</div>
+<div class="process-card">
+<div class="process-num">04</div>
+<h4>Materials Selection</h4>
+<p>Choose from curated premium materials with expert guidance at every step.</p>
+</div>
+<div class="process-card">
+<div class="process-num">05</div>
+<h4>Construction</h4>
+<p>Our in-house crews execute the build with precision, keeping you informed throughout.</p>
+</div>
+</div>
+</div>
+</section>
 
-    <footer>
-        <p>Home by Tom Renovations — Serving the Bay Area</p>
-        <p style="margin-top:8px;">Walnut Creek, CA</p>
-        <p style="margin-top:8px;"><a href="tel:4159079070">(415) 907-9070</a></p>
-        <p style="margin-top:16px;">&copy; 2026 Home by Tom Renovations. All rights reserved.</p>
-    </footer>
+<!-- Services -->
+<section class="services">
+<div class="container">
+<div class="section-label text-center">Full Scope of Services</div>
+<h2 class="section-title text-center">Everything Your Home Needs, Under One Roof</h2>
+<p class="section-subtitle text-center mx-auto">From kitchens to rooftops, we handle it all.</p>
+<div class="services-list">
+<div class="service-item"><div class="service-dot"></div><span>Full Home Remodeling</span></div>
+<div class="service-item"><div class="service-dot"></div><span>Kitchen Remodeling</span></div>
+<div class="service-item"><div class="service-dot"></div><span>Bathroom Remodeling</span></div>
+<div class="service-item"><div class="service-dot"></div><span>ADU Construction</span></div>
+<div class="service-item"><div class="service-dot"></div><span>Home Additions</span></div>
+<div class="service-item"><div class="service-dot"></div><span>Outdoor Remodel</span></div>
+<div class="service-item"><div class="service-dot"></div><span>Roofing</span></div>
+<div class="service-item"><div class="service-dot"></div><span>Financing Available</span></div>
+</div>
+</div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+<div class="container">
+<div class="section-label text-center">Complete Renovation Stories</div>
+<h2 class="section-title text-center">From Start to Finish, Our Clients Love the Result</h2>
+<div class="reviews-grid" style="margin-top:48px">
+<div class="review-card">
+<div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<blockquote>"We did a complete gut renovation of our 1970s ranch house — new kitchen, both bathrooms, flooring throughout, and an ADU in the backyard. Home by Tom managed every single aspect: design, city permits, structural engineering, and construction. Having one team for all of it was a game-changer."</blockquote>
+<div class="review-author">Anthony & Maria S.</div>
+<div class="review-detail">Full Home Renovation + ADU</div>
+</div>
+<div class="review-card">
+<div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<blockquote>"We were terrified of a major renovation until we met Tom's team. They walked us through their full-service process, showed us 3D designs within days, and managed everything from permits to the final coat of paint. Our home looks completely new and we never had to coordinate a single subcontractor."</blockquote>
+<div class="review-author">Rachel & James T.</div>
+<div class="review-detail">Whole-Home Renovation</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Trust Numbers -->
+<section class="trust">
+<div class="container">
+<div class="trust-row">
+<div class="trust-item">
+<div class="trust-number">21+</div>
+<div class="trust-label">Years of Experience</div>
+</div>
+<div class="trust-item">
+<div class="trust-number">200+</div>
+<div class="trust-label">5-Star Reviews</div>
+</div>
+<div class="trust-item">
+<div class="trust-number">100%</div>
+<div class="trust-label">Licensed & Insured</div>
+</div>
+<div class="trust-item">
+<div class="trust-number">1</div>
+<div class="trust-label">Team for Everything</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<h2>Your Complete Renovation Starts Here</h2>
+<p>One call is all it takes. We'll visit your home, understand your vision, and deliver a comprehensive proposal within 12 hours.</p>
+<a href="tel:4159079070" class="cta-phone">(415) 907-9070</a>
+<a href="tel:4159079070" class="btn-primary">Get Your Free Consultation</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<a href="#" class="logo">Home by <span>Tom</span></a>
+<span>Full-Service Renovation &bull; Bay Area &bull; Licensed & Insured &bull; (415) 907-9070</span>
+</div>
+</footer>
+
 </body>
 </html>
